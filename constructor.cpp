@@ -18,23 +18,28 @@ destructor: is used to deallocate the memory space of an object
 
 constructor doesnt having any return typr
 */
-// #include<iostream>
+// #include <iostream>
 // using namespace std;
 // // public:classname(){
 // //   statement
 // // }
-// class student {
-//  public: student(){
-//     cout<<"memory allocation";
-//   }
-//   void hello(){
-//     cout<<"hello";
-//   }
+// class student
+// {
+// public:
+//     student()
+//     {
+//         cout << "memory allocation";
+//     }
+//     void hello()
+//     {
+//         cout << "hello";
+//     }
 // };
-//  int main(){
-//   student s ;// implicit calling
-//  // s.hello();// explicit calling
-//  }
+// int main()
+// {
+//     student s; // implicit calling
+//     // s.hello();// explicit calling
+// }
 // =================================================================================================
 // #include<iostream>
 // using namespace std;
@@ -51,7 +56,7 @@ constructor doesnt having any return typr
 // }s;
 
 // // =========================================constructor overloading================================================================
-// we can create a parameterized constructor by using either one parameter or more than one 
+// we can create a parameterized constructor by using either one parameter or more than one
 // if a program contains more than on constructor id called constructor overloding
 // #include<iostream>
 // using namespace std;
@@ -99,106 +104,39 @@ constructor doesnt having any return typr
 //   p2.show();
 // }
 
-//=====================sallow copy===================================================================================================
-// #include <iostream>
-// using namespace std;
-// class top
-// {
-//     int amount;
-//     int *principal;
-
-// public:
-//     top(int a, int p)
-//     {
-       
-//         amount = a;
-//         principal=new int;
-//         *principal=p;
-//     }
-
-
-//    top (top &obj){
-//       amount=obj.amount;
-//        principal=new int;
-//       *principal=*obj.principal;
-
-//    }
-
-
-
-
-//     void update()
-//     {
-      
-//         amount = amount + 1000;
-//           *principal = *principal + 1000;
-        
-//     }
-//     void show()
-//     {
-//         cout << "amount=" << amount << "\n";
-//         cout << "principal=" << *principal;
-//     }
-// };
-// int main()
-// {
-  
-//     top p1(4000, 1000);
-//     top p2(p1);
-//     cout << "\n value of p1 \n";
-//     p1.show();
-//     cout << "\n value of p2 \n";
-//     p2.show();
-//     p1.update();
-//     cout << "\nafter updation of p1\n";
-//     p1.show();
-//     cout << "\nvalue of p2\n";
-//     p2.show();
-// }
-
-// =========================================================================//deep copy//================================================
-#include <iostream>
+// =============================deep copy==================================
+#include<iostream>
 using namespace std;
-class top
-{
-    int amount;
-    int *p;
+class atm {
+    int amount,*loc;
+    public:
+    atm(atm &t){
+        amount = t.amount;
+        loc = new int ;
+        *loc = *(t.loc);
+    }
+    atm(int amt,int adr){
+        amount = amt;
+        loc = new int ;
+        loc = &adr;
 
-public:
-    top(top &tp) // parameter class type ka rahega
-    {
-        amount = tp.amount;
-        p = new int();
-        *p = *(tp.p);
     }
-    top(int a, int adrs)
-    {
-        amount = a;
-        p = new int();
-        p = &adrs;
+    void transction(int a){
+        amount = amount+a;
+        *loc = *loc+1;
     }
-    void update()
-    {
-        amount = amount + 1000;
-        *p = *p + 1;
-    }
-    void show()
-    {
-        cout << "amount=" << amount << "\n";
-        cout << "address=" << *p;
+    void show(){
+           cout<<"balance="<<amount<<"\t";
+           cout<<"location = "<<*loc<<"\n";
     }
 };
 int main()
 {
-    top p1(4000, 1);
-    top p2(p1);
-    cout << "\nvalue of p1\n";
-    p1.show();
-    cout << "\nvalue of p2\n";
-    p2.show();
-    p1.update();
-    cout << "\nafter updation of p1\n";
-    p1.show();
-    cout << "\nvalue of p2\n";
-    p2.show();
+atm mpnagar(1000,1);
+atm bhel (mpnagar);
+bhel.show();
+mpnagar.transction(1000);
+mpnagar.show();
+bhel.show();
+return 0 ;
 }

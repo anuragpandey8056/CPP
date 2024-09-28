@@ -5,9 +5,9 @@
 4)polymorphism
 
 ==========================================================================================================
-Class => it is a collection of data member and member function
+Class => it is a collection of data member and member function.
 class is also called user defined data types.
-class doesn't take any memory without object made
+class doesn't take any memory without object made.
 khali class ka object bna dete hai to wo 1byte space leta hai
 =====================================================================================================================
 
@@ -22,7 +22,7 @@ real world entity which  ocuppy space  is called object ;
 2. public
 2.protected
 =======================================================================================================================
-encapsultion => rapping up of your data //    calling data member is called encapsulation
+encapsultion =>rapping up of your data // calling data member is called encapsulation
 
 
 
@@ -83,62 +83,65 @@ encapsultion => rapping up of your data //    calling data member is called enca
 //    t.show();
 // }
 
-// #include<iostream>
+// #include <iostream>
 // using namespace std;
-// //function declare & define inside a class
+// // function declare & define inside a class
 // class top
 // {
-//     int a,b,c;
-//     public:void sum(int x,int y);
-//     void show();
+//   int a, b, c;
+
+// public:
+//   void sum(int x, int y);
+//   void show();
 // };
-// void top::sum(int x,int y){
-//      c=x+y;
-//     cout<<c;
+// void top::sum(int x, int y)
+// {
+//   c = x + y;
+//   cout << c;
 // }
-// void top::show(){
-//     cout<<"result = ";
+// void top::show()
+// {
+//   cout << "result =";
 // }
 // int main()
 // {
-//     top p;
-//     int s,b;
-//     cout<<"enter two number\n";
-//     cin>>s>>b;
-// //    p.show();
-
-//    p.sum(s,b);
-
+//   top p;
+//   int s, b;
+//   cout << "enter two number\n";
+//   cin >> s >> b;
+//   //    p.show();
+//  p.sum(s, b);
 // }
 
-// #include<iostream>
+// #include <iostream>
 // using namespace std;
-// //here we use this pointer "this->" for same variable and argument
-// jab data member and function ka argument same hota hai tab ambiguty create hoti hai to ham log this pointer ka use karte hai
+// // here we use this pointer "this->" for same variable and argument.
+// //  jab data member and function ka argument same hota hai tab ambiguty create hoti hai to ham log this pointer ka use karte hai.
 
 // class top
 // {
-//     int a,b,c;
-//     public:void sum(int a,int b)
-//     {
-//      this->a=a;
-//      this->b=b;
-//         c=a+b;
-//     }
-//     void show()
-//     {
-//         cout<<a<<"+"<<b<<"="<<c;
-//     }
+//   int a, b, c;
+
+// public:
+//   void sum(int a, int b)
+//   {
+//     this->a = a;
+//     this->b = b;
+//     c = a + b;
+//   }
+//   void show()
+//   {
+//     cout << a << "+" << b << "=" << c;
+//   }
 // };
 // int main()
 // {
-//     top h;
-//     int s,b;
-//     cout<<"enter two number\n";
-//     cin>>s>>b;
-//     h.sum(s,b);
-//     h.show();
-
+//   top h;
+//   int s, b;
+//   cout << "enter two number\n";
+//   cin >> s >> b;
+//   h.sum(s, b);
+//   h.show();
 // }
 
 // #include<iostream>
@@ -171,76 +174,112 @@ encapsultion => rapping up of your data //    calling data member is called enca
 //===================================================================================================================================
 
 // =====================================================================================================
+
 // #include <iostream>
 // using namespace std;
-//// funcation overloading  is that a class consist of same name of funcation with different parameters
+// // funcation overloading  is that a class consist of same name of funcation with different parameters.
 // class top
-//{
-//     int a, b, c;
-//
+// {
+//   int a, b, c;
+
 // public:
-//     void show(int a,int b)
-//     {
-//         cout << "int addition"<<a+b<<"\n";
-//         // same name hai funcation ka but parameter different hai dono ke isliye call ho rha hai ;
-//     }
-//     void show(float a, float b)
-//     {
-//
-//         cout << "float addition"<<a+b<<"\n";
-//     }
-//
-//     void show(double a, double b)
-//     {
-//
-//         cout << "double addition"<<a+b<<"\n";   // double ki priority jada hoti hai isliye points wali value leleta hai
-//     }
+//   void show(int a, int b)
+//   {
+//     cout << "int addition" << a + b << "\n";
+//     // same name hai funcation ka but parameter different hai dono ke isliye call ho rha hai ;
+//   }
+//   void show(float a, float b)
+//   {
+
+//     cout << "float addition" << a + b << "\n";
+//   }
+
+//   void show(double a, double b)
+//   {
+
+//     cout << "double addition" << a + b << "\n"; // double ki priority jada hoti hai isliye points wali value leleta hai
+
+//   }
 // };
 // int main()
-//{
-//     top h;
-//     int s;
-//     cout << "enter two number\n";
-//     cin >> s;
-//     h.show(45.5,44.2);
-//
-//
+// {
+//   top h;
+//   int s;
+//   cout << " enter two number \n ";
+//   cin >> s;
+//   h.show(45.59, 44.25);
 // }
 
 //  =================================================static ==============================================
 
-// the non static data member and non static memeber function is the attribute of object
-// the static data memeber and static memeber function are the attribute of a class
+// the non static data member and non static memeber function is the attribute of object.
+// the static data memeber and static memeber function are the attribute of a class.
 // satatic data member shareable hota hai copy nhi banata hai. jisse memory bachti hai
-// we can also declare and define static function inside a class
-// we can acces the ststic  member function   of a class with the help of class name using scoperesulation operator and fuction name
+// we can also declare and define static function inside a class.
+// we can acces the ststic  member function   of a class with the help of class name using scoperesulation operator and fuction name.
 // satatic data member  class ke ander declare hota hai aur bahar initialization hota hai .
-// satatic data member static function me hi use hote hai and nonstatic non static me use hote hai vise-versa
+// satatic data member static function me hi use hote hai and nonstatic non static me use hote hai vise-versa.
 //  ========================================================================================
 // #include <iostream>
 // using namespace std;
-// // isme object banane ki jarurat mhi hai direct class or funcation se call karo ============
+
 // class cybrom
 // {
-//   static int a;
-
+//   static int a; // Declare the static member variable
 // public:
-//   void static show(int x)
+//   static void show(int x)
 //   {
 //     a = x;
+//     cout << a << endl;
 //   }
+
 //   static void show1()
 //   {
-//     cout << a << "\n";
-//   };
-//   int cybrom::a = 900;
-//   int main()
-//   {
-
-//     cybrom::show(10);
-//     cybrom::show1();
+//     cout << a << endl;
 //   }
+// };
 
+// // Define the static member outside the class
+// int cybrom::a = 0;
+
+// int main()
+// {
+//   // cybrom::show(100); // Calling the static function directly using the class
+//   // cybrom::show1();// Calling the second static function to display 'a'
+
+//  cybrom c;
+//  c.show(100);
+//  cybrom d;
+//  d.show(200);
+ 
+
+//   return 0;
+// }
+
+
+
+
+// #include<iostream>
+// using namespace std;   
+// class atmcard{
+//    static int c;
+//    public:
+//    void static show(int a){
+//     c++;
+//     cout<<c;
+//    }
+// };
+// int atmcard::c=0;
+// int main()
+// {
+//   atmcard a;
+//   atmcard b;
+//   a.show(10);
+//   a.show(20);
+//   b.show(10);
+
+
+// return 0 ;
 // }
 
 // =======================================================================================================
@@ -272,10 +311,10 @@ encapsultion => rapping up of your data //    calling data member is called enca
 
 // ====================// composite class==========================================================
 //  composite class is that  whic hold the previous class object  and with the help it can call the member the function of previous class inside a funtion
-// composite class is called a has a relationship class 
+// composite class is called a has a relationship class
 // #include <iostream>
 // using namespace std;
-// 
+
 // class top
 // {
 // public:
@@ -356,32 +395,31 @@ encapsultion => rapping up of your data //    calling data member is called enca
 //===================================================friends class=============================================================
 // with the help of friend class we can access the private data memeber and private member function of any class outside of it provided that
 // the friend class should be declared inside of it
-// #include <iostream>
-// using namespace std;
-// class sbi
-// {
-//   int amount = 1000;
-//   void info()
-//   {
-//     cout << "CUSTOMER OF SBI \n";
-//   }
-//   friend class axis;
-// };
-// class axis
-// {
-//   public: void show (sbi s){
-//     cout<<"balance = "<<s.amount<<"\n";
-//     s.info();
+#include <iostream>
+using namespace std;
+class sbi
+{
+  int amount = 1000;
+  void info()
+  {
+    cout << "CUSTOMER OF SBI \n";
+  }
+  friend class axis;
+};
+class axis
+{
+  public: void show (sbi s){
+    cout<<"balance = "<<s.amount<<"\n";
+    s.info();
 
-//   }
+  }
 
-// };
-// int main()
-// {
-//   sbi s1;
-//   axis a;
-//   a.show(s1);
+};
+int main()
+{
+  sbi s1;
+  axis a;
+  a.show(s1);
 
-
-//   return 0;
-// }
+  return 0;
+}

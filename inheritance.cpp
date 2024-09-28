@@ -92,7 +92,7 @@
 // };
 // class sbi:public rbi{
 //     int a;
-//     public:void display()
+//     protected:void display()
 //     {
 //         show();
 //         cout<<"sbi\n";
@@ -163,7 +163,7 @@
 // class customer : public atm
 // {
 // public:
-//     customer(int c, int p):atm(c)
+//     customer(int c, int p) : atm(c)
 //     {
 //         cout << "PWD=" << p << "\n";
 //     }
@@ -171,13 +171,12 @@
 
 // int main()
 // {
-//   customer paisa(1001, 2025);
-//      return 0;
+//     customer paisa(1001, 2025);
+//     return 0;
 // }
 
-
-//==================================multilevel inheritance ==================================================================
-// In a multilevel inheritance we create more than two classes and each sub-classes inherits the property of previous class  
+//==================================multilevel inheritance ===========================================================================
+// In a multilevel inheritance we create more than two classes and each sub-classes inherits the property of previous class
 // #include<iostream>
 // using namespace std;
 // class RBI{
@@ -239,12 +238,11 @@
 // return 0 ;
 // }
 
-
 //=======================multiple inheritance====================================================================
 // in a mutiple inheritance the chid class inherit the properties more than one class at a time
 
-// daimond problem arises in multiple inheritance when the funcation is same in parents class  
-//sclicing matalab scope resoultion operator laga ke call karenge
+// daimond problem arises in multiple inheritance when the funcation is same in parents class
+// sclicing matalab scope resoultion operator laga ke call karenge
 // #include <iostream>
 // using namespace std;
 // class axis
@@ -282,49 +280,48 @@
 // }
 
 // to overcome the daimond problem
-//daimond problem is that when multiple inheritance is that on that there is differnt class have same name of function is called daimond problem 
+// daimond problem is that when multiple inheritance is that on that there is differnt class have same name of function is called daimond problem
 
-// #include <iostream>
-// using namespace std;
-// class axis
-// {
-// public:
-//     void msg()
-//     {
-//         cout << "axis\n";
-//     }
-// };
-// class sbi
-// {
-// public:
-//     void msg()
-//     {
-//         cout << "sbi\n";
-//     }
-// };
-// class customer:public sbi, public axis
-// {
-// public:
-//     void msg()
-//     {
-//         cout << "customer\n";
-//     }
-// };
+#include <iostream>
+using namespace std;
+class axis
+{
+public:
+    void msg()
+    {
+        cout << "axis\n";
+    }
+};
+class sbi
+{
+public:
+    void msg()
+    {
+        cout << "sbi\n";
+    }
+};
+class customer:public sbi, public axis
+{
+public:
+    void msg()
+    {
+        cout << "customer\n";
+    }
+};
 
-// int main()
-// {
-//    customer c;
+int main()
+{
+   customer c;
 //    c.sbi::msg();// this is the way to overcome the daimond problem
-//    sbi s = c;  //type casting
-//    s.msg();//
+//    c.axis::msg();
+//    c.msg();
+   sbi s = c;  //type casting
+   s.msg();//
 //    static_cast<sbi>(c).msg();// this is also a type to overcome daimond problem
-    
 
-// }
+}
 
-
-
-//===============================example best constructor and destructor ===================================================
+// ===============================example best constructor and destructor ===================================================
 // #include <iostream>
 // using namespace std;
 // class axis
@@ -417,52 +414,48 @@
 // }
 
 //=====================================================hybrid inheritance=======================================
-#include <iostream>
-using namespace std;
-class RBI
-{
-public:
-    void msgrbi()
-    {
-        cout << "hello rbi\n";
-    }
-};
-class SBI : virtual public RBI
-{
-public:
-    void msgsbi()
-    {
-        cout << "hello sbi\n";
-    }
-};
-class AXIS : virtual public  RBI
-{                                            // daimond  problem remove  by virtual keywords
+// #include <iostream>
+// using namespace std;
+// class RBI
+// {
+// public:
+//     void msgrbi()
+//     {
+//         cout << "hello rbi\n";
+//     }
+// };
+// class SBI : virtual public RBI
+// {
+// public:
+//     void msgsbi()
+//     {
+//         cout << "hello sbi\n";
+//     }
+// };
+// class AXIS : virtual public  RBI
+// {                                            // daimond  problem remove  by virtual keywords
 
-public:
-    void msgaxis()
-    {
-        cout << "hello axis\n";
-    }
-};
-class CUSTOMER : public SBI, public AXIS
-{
-public:
-    void msgcustomer()
-    {
-        cout << "hello customer\n";
-    }
-};
+// public:
+//     void msgaxis()
+//     {
+//         cout << "hello axis\n";
+//     }
+// };
+// class CUSTOMER : public SBI, public AXIS
+// {
+// public:
+//     void msgcustomer()
+//     {
+//         cout << "hello customer\n";
+//     }
+// };
 
-int main()
-{
-    CUSTOMER c;
-    c.msgaxis();
-    c.msgcustomer();
-    c.msgsbi();
-    c.msgrbi();
+// int main()
+// {
+//     CUSTOMER c;
+//     c.msgaxis();
+//     c.msgcustomer();
+//     c.msgsbi();
+//     c.msgrbi();
 
-}
-
-
-
-
+// }
