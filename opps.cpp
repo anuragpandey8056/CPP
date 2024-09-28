@@ -395,31 +395,31 @@ encapsultion =>rapping up of your data // calling data member is called encapsul
 //===================================================friends class=============================================================
 // with the help of friend class we can access the private data memeber and private member function of any class outside of it provided that
 // the friend class should be declared inside of it
-#include <iostream>
-using namespace std;
-class sbi
-{
-  int amount = 1000;
-  void info()
-  {
-    cout << "CUSTOMER OF SBI \n";
-  }
-  friend class axis;
-};
-class axis
-{
-  public: void show (sbi s){
-    cout<<"balance = "<<s.amount<<"\n";
-    s.info();
+// #include <iostream>
+// using namespace std;
+// class sbi
+// {
+//   int amount = 1000;
+//   void info()
+//   {
+//     cout << "CUSTOMER OF SBI \n";
+//   }
+//   friend class axis;
+// };
+// class axis
+// {
+//   public: void show (sbi s){
+//     cout<<"balance = "<<s.amount<<"\n";
+//     s.info();
 
-  }
+//   }
 
-};
-int main()
-{
-  sbi s1;
-  axis a;
-  a.show(s1);
+// };
+// int main()
+// {
+//   sbi s1;
+//   axis a;
+//   a.show(s1);
 
-  return 0;
-}
+//   return 0;
+// }
